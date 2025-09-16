@@ -1,5 +1,6 @@
 import React from 'react'
 import { Star, MapPin } from "lucide-react"; // icons
+import "../App.css"
 const VendorCard = ({ image, name, category, address, rating }) => {
  return (
     <div className="border rounded-lg shadow-sm bg-white w-80 flex-shrink-0">

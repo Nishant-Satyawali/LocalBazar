@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../App.css"
 import shoppingIcon from "../assests/shopping-store.png"
 import homeIcon from "../assests/house.png"
@@ -26,38 +26,53 @@ const Head = () => {
 
     {/* Navigation Links */}
     <div className="md:flex md:items-center space-x-6 hidden">
-      <Link
+      <NavLink
         to="/"
-        className="flex items-center space-x-2 px-4 py-2 rounded-md bg-green-600 text-white font-medium hover:bg-green-700 transition"
+        className={({isActive})=>
+        isActive?" flex items-center space-x-2 px-4 py-2 rounded-md bg-green-600 text-white font-medium hover:bg-green-700 transition":
+        "flex items-center space-x-2 px-4 py-2 rounded-md text-gray-700 font-medium hover:bg-green-700 transition"
+        }
       >
         <img src={homeIcon} alt="Home" className="w-5 h-5" />
         <span>Home</span>
-      </Link>
+      </NavLink>
 
-      <Link
+      <NavLink
         to="/vendors"
-        className="flex items-center space-x-2 px-4 py-2 rounded-md text-gray-800 hover:bg-gray-100 transition"
+        className={({isActive})=>
+        isActive? " bg-green-500 text-white flex items-center space-x-2 px-4 py-2 rounded-md hover:bg-gray-100 transition":
+        "flex items-center space-x-2 px-4 py-2 rounded-md text-gray-800 hover:bg-gray-100 transition"
+        }
       >
         <img src={vendorsIcon} alt="Vendors" className="w-5 h-5" />
         <span>Vendors</span>
-      </Link>
+      </NavLink>
 
-      <Link
+      <NavLink
         to="/register"
-        className="flex items-center space-x-2 px-4 py-2 rounded-md text-gray-800 hover:bg-gray-100 transition"
+        className= {({isActive})=>
+        isActive? "flex items-center space-x-2 px-4 py-2 rounded-md text-white bg-green-500 hover:bg-gray-100 transition":
+        "flex items-center space-x-2 px-4 py-2 rounded-md text-gray-800 hover:bg-gray-100 transition"
+      }
+        
       >
         <img src={registerIcon} alt="Register" className="w-5 h-5" />
         <span>Register</span>
-      </Link>
+      </NavLink>
 
-      <Link
+      <NavLink
         to="/cart"
-        className="flex items-center space-x-2 px-4 py-2 rounded-md text-gray-800 hover:bg-gray-100 transition"
+        className= {({isActive})=>
+          isActive ? "bg-green-600 flex items-center space-x-2 px-4 py-2 rounded-md text-white hover:bg-gray-100 transition" 
+          : "flex items-center space-x-2 px-4 py-2 rounded-md text-gray-800 hover:bg-gray-100 transition"
+        }
+      
         
       >
         <img src={cartIcon} alt="Cart" className="w-5 h-5" />
         <span>Cart</span>
-      </Link>
+      </NavLink>
+
     </div>
 
     <div className="block md:hidden">

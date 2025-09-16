@@ -1,17 +1,16 @@
-
-import "./App.css"
-import Center from "./Component/Center.jsx"
+import React from "react";
+import { CartProvider } from "./Component/CartContext.jsx";
+import { Outlet } from "react-router-dom";
 import Head from "./Component/Head.jsx"
-import { Outlet } from "react-router-dom"
 function App() {
-
-
   return (
-    <>
-    <Head/>
-    <Outlet/>
-    </>
-  )
+    <CartProvider>
+      <div className="min-h-screen bg-gray-50">
+        <Head/>
+        <Outlet />
+      </div>
+    </CartProvider>
+  );
 }
 
-export default App
+export default App;
