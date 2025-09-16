@@ -53,15 +53,12 @@ const Head = () => {
       <Link
         to="/cart"
         className="flex items-center space-x-2 px-4 py-2 rounded-md text-gray-800 hover:bg-gray-100 transition"
+        
       >
         <img src={cartIcon} alt="Cart" className="w-5 h-5" />
         <span>Cart</span>
       </Link>
     </div>
-
-    
-    
-
 
     <div className="block md:hidden">
       <button
